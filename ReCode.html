@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ReCode+ Studio | Recodificando el Futuro</title>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <meta name="description" content="ReCode+ Studio: Recodificando el futuro a través de desarrollo web, IA y software a medida en CDMX.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+</head>
+<body data-current-theme="dark">
+
+    <div class="fixed-background-effects">
+        <div class="scanlines"></div>
+        <div class="ambient-light blue-orb"></div>
+        <div class="ambient-light purple-orb"></div>
+        <div class="particles-container">
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        </div>
+    </div>
+  
+    <div class="jp-decor jp-left">未来 FUTURO 未来</div> 
+    <div class="jp-decor jp-right">天顶 ZENIT 天顶</div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header class="smart-navbar">
+        <div class="logo">RECODE+</div>
+        <nav class="menu">
+            <a href="#" class="magnetic-btn">Home</a>
+            <a href="#servicios" id="btn-servicios" class="magnetic-btn">Servicios</a>
+            <a href="#portafolio" class="magnetic-btn">Portafolio</a>
+            <a href="#acerca" id="btn-acerca" class="magnetic-btn">Acerca</a>
+        </nav>
+        <a href="#contacto" class="contacto magnetic-btn">CONTACTO</a>
+    </header>
+
+    <div id="preloader">
+        <div class="loader-grid"></div>
+        <div class="loader-content">
+            <div class="decoder-text" data-value="RECODE+ STUDIO">INIT...</div>
+        </div>
+        <div class="loader-corner top-left">SYS.BOOT_SEQ // V.FINAL</div>
+        <div class="loader-corner bottom-right">LOADING_MODULES...</div>
+    </div>
+    
+    <main id="home" class="hero">
+        <div class="cyber-grid"></div>
+        
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <h1 class="hero-title glitch-effect hero-anim" data-text="RECODE+ STUDIO">
+                    RECODE+ <span class="accent">STUDIO</span>
+                </h1>
+                <p class="hero-sub" id="typing-sub"></p>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="mouse-icon"></div>
+            <span>SCROLL</span>
+        </div>
+    </main>
+
+    <section id="servicios" class="servicios section-light skew-elem">
+        <div class="code-float cf-s1">/></div>
+        <div class="code-float cf-s2">*</div>
+        <div class="code-float cf-s3">[]</div>
+
+        <h2 class="reveal-text text-contrast bi-anim-title">SERVICIOS</h2>
+        <div class="servicios-grid stagger-container">
+            <div class="servicio-card servicio-feature tilt-card">
+                <div class="sf-content">
+                    <div class="icon">💻</div>
+                    <h3 class="text-contrast">Desarrollo Web</h3>
+                    <p class="sub text-contrast-sub">Soluciones digitales de alto impacto.</p>
+                </div>
+                <div class="sf-action"><button class="btn-explorar magnetic-btn" data-service="web">Explorar</button></div>
+            </div>
+            <div class="servicio-card servicio-feature tilt-card">
+                <div class="sf-content">
+                    <div class="icon">🤖</div>
+                    <h3 class="text-contrast">Agentes de IA</h3>
+                    <p class="sub text-contrast-sub">Inteligencia artificial aplicada a tu negocio.</p>
+                </div>
+                <div class="sf-action"><button class="btn-explorar magnetic-btn" data-service="ia">Explorar</button></div>
+            </div>
+            <div class="servicio-card servicio-feature tilt-card">
+                <div class="sf-content">
+                    <div class="icon">📱</div>
+                    <h3 class="text-contrast">Aplicaciones</h3>
+                    <p class="sub text-contrast-sub">Evolución móvil y web multiplataforma.</p>
+                </div>
+                <div class="sf-action"><button class="btn-explorar magnetic-btn" data-service="apps">Explorar</button></div>
+            </div>
+            <div class="servicio-card servicio-feature tilt-card">
+                <div class="sf-content">
+                    <div class="icon">🛠️</div>
+                    <h3 class="text-contrast">Software</h3>
+                    <p class="sub text-contrast-sub">Herramientas a la medida de tu visión.</p>
+                </div>
+                <div class="sf-action"><button class="btn-explorar magnetic-btn" data-service="software">Explorar</button></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="service-modal" class="modal">
+        <div id="modal-container" class="modal-content">
+            <span class="close-modal magnetic-btn">&times;</span>
+            <div id="modal-body" class="modal-body-wrapper"></div>
+        </div>
+    </div>
+
+    <section id="portafolio" class="portfolio section-dark skew-elem">
+        <h2 class="portfolio-title reveal-text text-contrast bi-anim-title">PORTAFOLIO</h2>
+        <div class="portfolio-container">
+            <div class="projects-grid stagger-container">
+                <article class="project-card tilt-card">
+                    <div class="project-thumb thumb-a"></div>
+                    <div class="project-body">
+                        <div class="project-meta">UI • Web</div>
+                        <h3 class="project-title text-contrast">Tienda premium</h3>
+                        <p class="project-desc text-contrast-sub">E-commerce con pasarela de pagos.</p>
+                        <div class="project-footer"><button class="btn-outline project-open magnetic-btn">Ver caso</button></div>
+                    </div>
+                </article>
+                <article class="project-card tilt-card">
+                    <div class="project-thumb thumb-b"></div>
+                    <div class="project-body">
+                        <div class="project-meta">Branding</div>
+                        <h3 class="project-title text-contrast">Branding Corp</h3>
+                        <p class="project-desc text-contrast-sub">Identidad visual para startup.</p>
+                        <div class="project-footer"><button class="btn-outline project-open magnetic-btn">Ver caso</button></div>
+                    </div>
+                </article>
+                <article class="project-card tilt-card">
+                    <div class="project-thumb thumb-c"></div>
+                    <div class="project-body">
+                        <div class="project-meta">App</div>
+                        <h3 class="project-title text-contrast">App Reservas</h3>
+                        <p class="project-desc text-contrast-sub">Sistema de gestión de clientes.</p>
+                        <div class="project-footer"><button class="btn-outline project-open magnetic-btn">Ver caso</button></div>
+                    </div>
+                </article>
+                <article class="project-card tilt-card">
+                    <div class="project-thumb thumb-d"></div>
+                    <div class="project-body">
+                        <div class="project-meta">Web</div>
+                        <h3 class="project-title text-contrast">Landing Page</h3>
+                        <p class="project-desc text-contrast-sub">Alta conversión para campañas.</p>
+                        <div class="project-footer"><button class="btn-outline project-open magnetic-btn">Ver caso</button></div>
+                    </div>
+                </article>
+                <article class="project-card tilt-card">
+                    <div class="project-thumb thumb-e"></div>
+                    <div class="project-body">
+                        <div class="project-meta">SaaS</div>
+                        <h3 class="project-title text-contrast">Dashboard</h3>
+                        <p class="project-desc text-contrast-sub">Analítica de datos en tiempo real.</p>
+                        <div class="project-footer"><button class="btn-outline project-open magnetic-btn">Ver caso</button></div>
+                    </div>
+                </article>
+                <article class="project-card tilt-card">
+                    <div class="project-thumb thumb-f"></div>
+                    <div class="project-body">
+                        <div class="project-meta">CMS</div>
+                        <h3 class="project-title text-contrast">Blog Tech</h3>
+                        <p class="project-desc text-contrast-sub">Portal de noticias automatizado.</p>
+                        <div class="project-footer"><button class="btn-outline project-open magnetic-btn">Ver caso</button></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="acerca" class="acerca section-light skew-elem">
+        <div class="watermark-huge">RECODE+</div>
+        <div class="code-float cf-1">&lt;/&gt;</div>
+        <div class="code-float cf-2">{ }</div>
+        <div class="code-float cf-3">#</div>
+        <div class="acerca-bg-pattern"></div>
+        <div class="acerca-intro">
+            <h2 class="section-title-gradient text-contrast reveal-text bi-anim-title">Acerca de <br> <span class="text-gradient">ReCode+</span></h2>
+            <div class="acerca-text-container">
+                <div class="acerca-text">
+                    <p class="reveal-lines text-contrast-sub"><strong>ReCode+</strong> es una empresa tecnológica dedicada a la creación, optimización y escalamiento de soluciones digitales modernas. Combinamos creatividad, tecnología e inteligencia artificial para desarrollar páginas web, aplicaciones y productos digitales con impacto real.</p>
+                    <p class="reveal-lines text-contrast-sub">Nacemos de la unión de tres perfiles complementarios, impulsados por una visión clara: en un país donde la digitalización aún no se aprovecha al máximo, creemos que la tecnología debe ser una herramienta de crecimiento y evolución.</p>
+                    <p class="reveal-lines text-contrast-sub">En ReCode+ no solo desarrollamos software. Diseñamos soluciones sólidas, escalables y bien ejecutadas, con una visión global y un enfoque futurista. Nuestro objetivo es claro: crear productos digitales que funcionen, representen y trabajen para cada negocio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologias" class="tech-section-wrapper">
+        <div class="tech-section">
+            <h3 class="subsection-title reveal-text text-contrast bi-anim-title">Tecnologias Dominadas</h3>
+            <div class="tech-grid-premium stagger-container">
+                <div class="tech-card" style="--item-color:#E34F26"><i class="fab fa-html5"></i><span class="text-contrast">HTML</span></div>
+                <div class="tech-card" style="--item-color:#3776AB"><i class="fab fa-python"></i><span class="text-contrast">Python</span></div>
+                <div class="tech-card" style="--item-color:#EA2D2E"><i class="fab fa-java"></i><span class="text-contrast">Java</span></div>
+                <div class="tech-card" style="--item-color:#F7DF1E"><i class="fab fa-js"></i><span class="text-contrast">JavaScript</span></div>
+                <div class="tech-card" style="--item-color:#F16529"><i class="fas fa-cube"></i><span class="text-contrast">Blender</span></div>
+                <div class="tech-card" style="--item-color:#FF69B4"><i class="fas fa-bezier-curve"></i><span class="text-contrast">Spline</span></div>
+                <div class="tech-card" style="--item-color:#8E54E9"><i class="fas fa-brain"></i><span class="text-contrast">ComfyUI</span></div>
+                <div class="tech-card" style="--item-color:#00599C"><i class="fas fa-code"></i><span class="text-contrast">C++</span></div>
+                <div class="tech-card" style="--item-color:#1572B6"><i class="fab fa-css3-alt"></i><span class="text-contrast">CSS</span></div>
+                <div class="tech-card" style="--item-color:#FF6584"><i class="fas fa-project-diagram"></i><span class="text-contrast">n8n</span></div>
+                <div class="tech-card" style="--item-color:#00C4CC"><i class="fab fa-figma"></i><span class="text-contrast">Figma</span></div>
+                <div class="tech-card" style="--item-color:#21759B"><i class="fab fa-wordpress"></i><span class="text-contrast">WordPress</span></div>
+            </div>
+        </div>
+
+        <div class="impacto-card tilt-card" style="margin-top: 80px;">
+            <div class="impacto-left">
+                <h3 class="text-contrast">Expertos en <span class="impact-accent">desarrollo digital</span></h3>
+                <p class="impact-desc text-contrast-sub">Fusionamos diseño y tecnología para crear experiencias web inolvidables.</p>
+            </div>
+            <div class="impacto-right">
+                <div class="stat-module">
+                    <div class="stat-num text-contrast" data-target="150">0</div>
+                    <div class="stat-label text-contrast-sub">Proyectos</div>
+                </div>
+                <div class="stat-module">
+                    <div class="stat-num text-contrast" data-target="100" data-suffix="%">0%</div>
+                    <div class="stat-label text-contrast-sub">Éxito</div>
+                </div>
+                <div class="stat-module">
+                    <div class="stat-num text-contrast" data-target="50">0</div>
+                    <div class="stat-label text-contrast-sub">Clientes</div>
+                </div>
+                <div class="stat-module">
+                    <div class="stat-num text-contrast" data-target="24">0</div>
+                    <div class="stat-label text-contrast-sub">Horas/día</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conecta" class="redes-sociales section-light skew-elem">
+        <div class="watermark-huge watermark-conecta">CONNECT</div>
+        <div class="code-float cf-c1">@</div>
+        <div class="code-float cf-c2">#</div>
+        <div class="code-float cf-c3">://</div>
+
+        <h3 class="subsection-title reveal-text text-contrast bi-anim-title" style="margin-bottom: 50px;">CONEXION NEURAL</h3>
+        <div class="redes-grid-3d stagger-container">
+            <a href="https://x.com/recodeplus?s=21" target="_blank" class="social-3d-card tilt-card card-x magnetic-btn">
+                <div class="card-3d-content">
+                    <div class="icon-layer"><i class="fa-brands fa-x-twitter"></i></div>
+                    <h4 class="text-layer text-contrast">X</h4>
+                </div>
+            </a>
+            <a href="https://www.tiktok.com/@recodeplusmx?_r=1&_t=ZS-93z0JjlJhas" target="_blank" class="social-3d-card tilt-card card-tiktok magnetic-btn">
+                <div class="card-3d-content">
+                    <div class="icon-layer"><i class="fab fa-tiktok"></i></div>
+                    <h4 class="text-layer text-contrast">TIKTOK</h4>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/recodeplusmx?igsh=MTR0dmJud2RzOTR2cQ==" target="_blank" class="social-3d-card tilt-card card-instagram magnetic-btn">
+                <div class="card-3d-content">
+                    <div class="icon-layer"><i class="fab fa-instagram"></i></div>
+                    <h4 class="text-layer text-contrast">INSTAGRAM</h4>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/share/17iBd121s2/?mibextid=wwXIfr" target="_blank" class="social-3d-card tilt-card card-facebook magnetic-btn">
+                <div class="card-3d-content">
+                    <div class="icon-layer"><i class="fab fa-facebook-f"></i></div>
+                    <h4 class="text-layer text-contrast">FACEBOOK</h4>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto-section section-dark">
+        <div class="contact-header">
+            <h2 class="section-title text-contrast reveal-text bi-anim-title">Tu idea, nuestro siguiente reto</h2>
+        </div>
+
+        <div class="contact-wrap">
+            <div class="contact-form-container tilt-card">
+                <h3 class="text-contrast">Envíanos un mensaje</h3>
+                <form id="contact-form" class="contact-form">
+    <div class="form-row">
+        <div class="form-group">
+            <label class="text-contrast-sub">Nombre Completo</label>
+            <input type="text" name="name" id="field-name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+            <label class="text-contrast-sub">Email</label>
+            <input type="email" name="email" id="field-email" placeholder="john@example.com" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label class="text-contrast-sub">Empresa</label>
+            <input type="text" name="company" id="field-company" placeholder="Tu Empresa Inc.">
+        </div>
+        <div class="form-group">
+            <label class="text-contrast-sub">Servicio</label>
+            <div class="select-wrapper">
+                <select name="service" id="field-service">
+    <option value="" disabled selected>Seleccionar servicio...</option>
+    <option value="Desarrollo Web">Desarrollo Web</option>  <option value="Agentes de IA">Agentes de IA</option>    <option value="Aplicaciones">Aplicaciones</option>
+    <option value="Software">Software</option>
+</select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="text-contrast-sub">Mensaje</label>
+        <textarea name="message" id="field-message" placeholder="Cuéntanos sobre tu proyecto..." rows="4" required></textarea>
+    </div>
+    
+    <button class="btn btn-primary glow-effect width-full magnetic-btn submit-btn" type="submit">
+        <span id="btn-text">Enviar Propuesta 🚀</span>
+    </button>
+</form>
+            </div>
+
+            <div class="contact-info-container">
+                <div class="info-card tilt-card">
+                    <div class="info-icon text-contrast">📧</div>
+                    <div><h4 class="text-contrast">Email</h4><p class="text-contrast-sub">recodeplus@gmail.com</p></div>
+                </div>
+                <div class="info-card tilt-card">
+                    <div class="info-icon text-contrast">📞</div>
+                    <div><h4 class="text-contrast">Teléfono</h4><p class="text-contrast-sub">+52 123 456 7890</p></div>
+                </div>
+                <div class="info-card tilt-card">
+                    <div class="info-icon text-contrast">📍</div>
+                    <div><h4 class="text-contrast">Ubicación</h4><p class="text-contrast-sub">CDMX, México</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-hero animate-section">
+        <div class="final-content">
+            <h2 class="final-title reveal-text">
+                <span class="accent-gray">RECODIFICANDO<br>EL FUTURO.</span>
+            </h2>
+            <div class="gradient-logo"></div>
+        </div>
+        
+        <footer class="final-footer">
+            <div class="footer-left logo text-contrast">RECODE+</div>
+            <div class="footer-center text-contrast-sub">@ReCode+ 2026</div>
+            <div class="footer-right">
+                <span class="location text-contrast-sub">CDMX, MEXICO</span>
+                <span id="time-display" class="time text-contrast-sub">00:00 PM</span>
+            </div>
+        </footer>
+        <div class="final-overlay"></div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
